@@ -1,0 +1,361 @@
+/*
+
+Info:
+This site is styled desktop-first. Responsive elements are placed at the bottom of this document.
+
+Tip:
+To navigate between sections of code in this document use the search function (cmd + f)/(ctrl + f) and enter "||". You can then skip between sections.
+
+*/
+
+/*
+    ----------------------------------------
+    || GENERAL PAGE FORMAT AND BACKGROUND //
+    ----------------------------------------
+*/
+
+html { /* Border box and scroll bars */
+    box-sizing: border-box;
+    overflow-y: scroll; /* Always show vertical scroll bar */
+    overflow-x: hidden; /* Hide horizontal scroll bar */
+}
+
+*, *::before, *::after { /* Box-sizing and removing margin/padding */
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+}
+
+body { /* Page general format and background */
+    /* width: 100%; */
+    min-height: 100vh; /* Body covers entire window height, placing footer at the very bottom */
+
+    display: flex; /* Make body a flex-box */
+    flex-direction: column;
+
+    background-color:rgb(229, 216, 255); /* Background in case of error with image */
+
+    background-image: url(../img/home_page_background.png);
+    background-size: 100%; /* Image cover browser window */
+    background-repeat: repeat;
+}
+
+.container { /* Base format and color for content containers */
+    width: 70vw;
+    max-width: 1200px; /* Limits content on large screens */
+
+    margin: 0 auto 3vw auto; /* Keep content spaced and centered */
+    padding: 2vw;
+
+    border-radius: 20px; /* Rounded corners */
+
+    background-color: #fffefe;
+    box-shadow: rgba(80, 80, 80, 0.2) 0 3px 7px, rgba(0, 0, 0, 0.2) 0 1.5px 4px; /* Shadow decor */
+}
+
+.container:hover { /* Shadow border when hover */
+    box-shadow: rgba(169, 100, 212, 0.423) 0 3px 7px, rgba(141, 84, 161, 0.451) 0 1.5px 4px;
+}
+
+.flex-container { /* Base format for flex-containers */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/*
+    --------------------
+    || COLOR PALETTE //
+    --------------------
+*/
+
+/*
+    ------------------------
+    || GENERAL TYPOGRAPHY //
+    ------------------------
+*/
+
+* { /* Base font */
+    font-family: 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p { /* Font size, bottom-margin and color */
+    font-size: 1rem;
+    margin-bottom: 15px;
+
+    color:rgb(95, 79, 104);
+}
+
+h1, h2, h3, a { /* Font and color */
+    font-family: 'Chewy', cursive;
+    color:rgb(160, 75, 205);
+}
+
+h1 { /* Large Header: Font-size, letter-spacing, color and text-shadow */
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+
+    color:rgb(198, 130, 234);
+    text-shadow: 2px 2px rgb(99, 41, 130);
+}
+
+h2 { /* Div Header: Font-size and margin-bottom */
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 { /* Small Extra Header: Font-size, margin */
+    font-size: 1.5rem;
+    margin: 20px 0 10px 0;
+}
+
+a { /* Remove underline of all links*/
+    text-decoration: none;
+}
+
+a:hover { /* Change color when hover */
+    color:rgb(198, 130, 234);
+    text-shadow: 1px 1px rgb(99, 41, 130);
+}
+
+/*
+    ------------------------
+    || TOP NAVIGATION BAR //
+    ------------------------
+*/
+
+ul.topnav { /* Navbar general format and color */
+    margin-bottom: 3vw; /* Space under navbar */
+
+    display: flex; /* Enable links to align horizontally */
+    justify-content: center; /* Keep links centered in their areas */
+    text-align: center;
+
+    font-family: 'Chewy', cursive;
+    list-style: none; /* Removes list bullets */
+
+    background-color: #fffefe;
+    box-shadow: rgba(80, 80, 80, 0.2) 0 3px 7px, rgba(0, 0, 0, 0.2) 0 1.5px 4px;
+}
+
+.topnav a { /* Navbar links format and color */
+    float: left; /* Align links horizontally */
+    width: 33vw; /* Space links evenly */
+    max-width: 600px;
+    padding: 2vw;
+
+    font-size: 30px;
+
+    color: rgb(192, 164, 247);
+    text-shadow: 2px 2px rgb(99, 41, 130);
+}
+
+.topnav a:hover { /* Change color of link when hover */
+    background-color: rgb(229, 216, 255);
+    color: #fffefe;
+}
+
+.active a { /* Underline link to current page */
+    text-decoration: underline;
+}
+
+/* || HEADER */
+
+/* || MAIN */
+
+/*
+    ------------
+    || FOOTER //
+    ------------
+*/
+
+footer { /* Footer format, background and shadow */
+    margin: auto 0 0 0; /* Keep at bottom div */
+
+    padding: 1vw;
+    text-align: center;
+
+    background-color: #fffefe;
+    box-shadow: rgba(80, 80, 80, 0.2) 0 3px 7px, rgba(0, 0, 0, 0.2) 0 1.5px 4px;
+}
+
+footer p { /* Footer font and color */
+    font-family: 'Chewy', cursive;
+    font-size: 1.5rem;
+
+    color: rgb(192, 164, 247);
+}
+
+/*
+    ----------------------------
+    || HOME-PAGE (INDEX.HTML) //
+    ----------------------------
+*/
+
+.home div { /* Split introduction */
+    width: 48%;
+}
+
+img.polaroid { /* Max-width */
+    max-width: 100%;
+}
+
+iframe.map { /* Embed: Google map */
+    width: 100%;
+    aspect-ratio: 1.33; /* Keep original scale */
+    max-width: 600px; /* Limit size for large screens */
+
+    border-radius: 20px; /* Rounded corners */
+}
+
+iframe.playlist { /* Embed: Spotify Playlist */
+    width: 100%;
+    aspect-ratio: 3/1; /* Keep original scale */
+    max-width: 600px; /* Limit size for large screens */
+}
+
+/* || PROJECTS-PAGE (PROJECTS.HTML) */
+
+.gallery { /* Div: Project Gallery*/
+    display: flex;
+    flex-direction: column; /* Flex-box to allow Projects to be placed at bottom of divs*/
+    width: 48%;
+    padding: 15px;
+
+    border-radius: 15px; /* Rounded corners */
+    border: 1px solid rgb(227, 216, 248);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.gallery:hover { /* Change shadow when hover */
+    box-shadow: rgba(169, 100, 212, 0.423) 0 3px 7px, rgba(141, 84, 161, 0.451) 0 1.5px 4px;
+}
+
+.gallery h3 { /* Remove margins of small header */
+    margin: 0;
+}
+
+.gallery iframe { /* Project Videos */
+    width: 100%;
+    aspect-ratio: 1.78; /* Keep original scale */
+    max-width: 400px; /* Limit size on large screens */
+
+    margin: auto auto 0px auto; /* Keep at bottom of div */
+
+    border-radius: 10px; /* Rounded corners*/
+}
+
+.container-scrollable { /* Project Scrollable Printscreens */
+    width: 100%;
+    aspect-ratio: 1.78; /* Keep original scale */
+
+    margin: auto auto 0px auto; /* Keep at bottom of div */
+
+    overflow-y: scroll; /* Vertical scrollbar */
+    border-radius: 10px; /* Rounded corners*/
+}
+
+.container-scrollable img { /* Fit Printscreen in div */
+    max-width: 100%;
+}
+
+/*
+    ---------------------------------
+    || CONTACT-PAGE (CONTACT.HTML) //
+    ---------------------------------
+*/
+
+table.contact { /* General table format, size and border-collapse */
+    flex: auto;
+
+    width: 40%;
+    max-width: 300px; /* Limit size on large screens */
+
+    border-collapse: collapse; /* Combine the borders*/
+}
+
+.contact td { /* Table cell format */
+    max-height: 30px;
+    padding: 15px;
+}
+
+.container .contact a { /* Links font-size and color */
+    font-size: 25px;
+
+    color: rgb(198, 130, 234);
+}
+
+.contact tr:hover { /* Change color when hovering cursor */
+    background-color: rgb(239, 233, 252);
+}
+
+.contact a:hover { /* Remove text-shadow when hover */
+    text-shadow: none;
+}
+
+.contact img { /* Format image of paper plane */
+    width: 33%;
+    max-width: 350px;
+    min-width: 150px;
+}
+
+/*
+    ------------------
+    || RESPONSIVITY //
+    ------------------
+*/
+
+@media (min-width: 2000px) { /* Font-size on large screens */
+    p {
+        font-size: 1.6rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .topnav a {
+        font-size: 3rem;
+    }
+    footer p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) { /* Font-size on small screens */
+    p {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .topnav a {
+        font-size: 1.3rem;
+    }
+    footer p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) { /* Change boxes on small screens */
+    .container { /* Base containers: more width and padding */
+        width: 90vw;
+        padding: 10px;
+    }
+
+    .container div { /* Content covers containers */
+        width: 100%;
+    }
+}
